@@ -1,0 +1,11 @@
+{
+  "installCommand": "npm --prefix edufolio install",
+  "buildCommand": "npm --prefix edufolio run build",
+  "outputDirectory": "edufolio/dist",
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
+}

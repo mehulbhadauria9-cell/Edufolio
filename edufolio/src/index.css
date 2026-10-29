@@ -1,0 +1,227 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+html, body, #root {
+  height: 100%;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(148, 163, 184, 0.25) transparent;
+}
+*::-webkit-scrollbar { width: 6px; height: 6px; }
+*::-webkit-scrollbar-thumb { background: rgba(148, 163, 184, 0.25); border-radius: 6px; }
+*::-webkit-scrollbar-track { background: transparent; }
+
+body {
+  background: #0B0F17;
+  cursor: default;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  color: #F1F5F9;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ---------- Typography Utilities ---------- */
+.font-geist {
+  font-family: 'Geist', 'Inter', sans-serif;
+}
+.font-space {
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+/* ---------- Matte Card & Surface System (No Neon, Professional) ---------- */
+.matte-surface,
+.glass-surface {
+  background: rgba(18, 24, 38, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 4px 16px -2px rgba(0, 0, 0, 0.4), 0 1px 2px 0 rgba(0, 0, 0, 0.25);
+}
+
+.matte-card,
+.liquid-glass {
+  background: rgba(19, 26, 42, 0.90);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 8px 24px -4px rgba(0, 0, 0, 0.45), inset 0 1px 0 0 rgba(255, 255, 255, 0.06);
+}
+
+.glass-dropdown {
+  background: rgba(15, 23, 42, 0.78);
+  backdrop-filter: blur(24px) saturate(190%);
+  -webkit-backdrop-filter: blur(24px) saturate(190%);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 20px 45px -10px rgba(0, 0, 0, 0.85), inset 0 1px 1px 0 rgba(255, 255, 255, 0.15);
+}
+
+.matte-card-white,
+.liquid-glass-white {
+  background: #FFFFFF;
+  color: #0F172A;
+  border: 1px solid #E2E8F0;
+  box-shadow: 0 4px 16px -2px rgba(0, 0, 0, 0.1);
+}
+
+.glass-border { border-color: rgba(255, 255, 255, 0.08); }
+.glass-hover:hover { border-color: rgba(255, 255, 255, 0.18); }
+
+/* ---------- Subtle Geometric Dot Grids ---------- */
+.dot-grid {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+.dot-grid-violet {
+  background-image: radial-gradient(rgba(99, 102, 241, 0.08) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+/* ---------- Ambient Subtle Orbs (Subdued Matte Lighting) ---------- */
+.radial-orb {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(140px);
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.07;
+  animation: orb-drift 18s ease-in-out infinite alternate;
+}
+
+@keyframes orb-drift {
+  0% { transform: translate(0px, 0px) scale(1); }
+  50% { transform: translate(25px, -30px) scale(1.08); }
+  100% { transform: translate(-20px, 20px) scale(0.95); }
+}
+
+/* ---------- Matte Executive Gradients ---------- */
+.gradient-harsh-violet,
+.gradient-matte-indigo {
+  background: linear-gradient(135deg, #4F46E5 0%, #3730A3 100%);
+}
+
+.gradient-harsh-cyan,
+.gradient-matte-slate {
+  background: linear-gradient(135deg, #0284C7 0%, #0369A1 100%);
+}
+
+.gradient-harsh-sunset,
+.gradient-matte-amber {
+  background: linear-gradient(135deg, #D97706 0%, #B45309 100%);
+}
+
+.gradient-harsh-aurora,
+.gradient-matte-teal {
+  background: linear-gradient(135deg, #0D9488 0%, #115E59 100%);
+}
+
+.gradient-rainbow,
+.gradient-matte-titanium {
+  background: linear-gradient(90deg, #6366F1, #3B82F6, #0EA5E9, #10B981);
+}
+
+/* Executive Titanium/Platinum Typography (No fluorescent neon rainbow) */
+.text-rainbow,
+.text-aurora {
+  background: linear-gradient(135deg, #FFFFFF 0%, #E2E8F0 50%, #94A3B8 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.border-rainbow {
+  border-color: rgba(99, 102, 241, 0.35) !important;
+}
+
+/* ---------- Matte Professional Shadows (No Neon Halos) ---------- */
+.shadow-harsh-violet,
+.shadow-matte-indigo {
+  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.4), 0 1px 3px 0 rgba(79, 70, 229, 0.15);
+}
+
+.shadow-harsh-cyan,
+.shadow-matte-blue {
+  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.4), 0 1px 3px 0 rgba(2, 132, 199, 0.15);
+}
+
+.shadow-harsh-rainbow,
+.shadow-matte-card {
+  box-shadow: 0 6px 24px -4px rgba(0, 0, 0, 0.5), 0 2px 6px -1px rgba(0, 0, 0, 0.3);
+}
+
+/* ---------- Matte Refined Left Accent Strips ---------- */
+.strip-cyan {
+  border-left: 3.5px solid #0EA5E9 !important;
+}
+.strip-violet {
+  border-left: 3.5px solid #6366F1 !important;
+}
+.strip-fuchsia {
+  border-left: 3.5px solid #8B5CF6 !important;
+}
+.strip-emerald {
+  border-left: 3.5px solid #10B981 !important;
+}
+.strip-amber {
+  border-left: 3.5px solid #D97706 !important;
+}
+.strip-rainbow {
+  border-left: 3.5px solid #6366F1 !important;
+}
+
+/* ---------- Professional Micro-Interactions (Refined, Subtle) ---------- */
+.hover-lift {
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.2s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.2s ease;
+}
+.hover-lift:hover {
+  transform: translateY(-2px);
+  border-color: rgba(255, 255, 255, 0.16) !important;
+  box-shadow: 0 8px 24px -4px rgba(0, 0, 0, 0.55), 0 2px 6px -1px rgba(0, 0, 0, 0.3);
+}
+
+.hover-glow:hover {
+  border-color: rgba(99, 102, 241, 0.35) !important;
+}
+
+.slide-arrow {
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.group:hover .slide-arrow {
+  transform: translateX(4px);
+}
+
+/* Focus states (accessibility) */
+:focus-visible {
+  outline: 2px solid #6366F1;
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+
+/* Grain texture (splash) */
+.grain-overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.02;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+.no-scroll { overflow: hidden; }

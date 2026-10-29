@@ -1,0 +1,17 @@
+{
+  "name": "edufolio-workspace",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "edufolio",
+    "server"
+  ],
+  "scripts": {
+    "start": "npm --prefix server start",
+    "build": "npm --prefix edufolio run build",
+    "unified": "npm run build && npm --prefix server start",
+    "client": "npm --prefix edufolio run dev",
+    "dev:server": "npm --prefix server run dev",
+    "dev": "npm --prefix edufolio run dev"
+  }
+}
